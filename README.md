@@ -1,6 +1,7 @@
 Yii2 Less.php
 =============
 This is a Yii2 wrapper extension for PHP port of the official LESS processor http://lesscss.org.
+Used composer package [Wikimedia\Less.php](https://packagist.org/packages/wikimedia/less.php) under hood.
 
 Installation
 ------------
@@ -10,13 +11,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist cakebake/yii2-less.php "*"
+php composer.phar require sunnyphp/yii2-less.php "*"
 ```
 
 or add
 
 ```
-"cakebake/yii2-less.php": "*"
+"sunnyphp/yii2-less.php": "*"
 ```
 
 to the require section of your `composer.json` file.
@@ -35,10 +36,10 @@ $config = [
         'assetManager' => [
             ...
             'converter' => [
-                'class' => 'cakebake\lessphp\AssetConverter',
+                'class' => 'SunnyPHP\Yii2\LessPHP\AssetConverter',
                 'compress' => true, // Optional: You can tell less.php to remove comments and whitespace to generate minimized css files.
                 'useCache' => true, // Optional: less.php will save serialized parser data for each .less file. Faster, but more memory-intense.
-                //'cacheDir' => null, // Optional: is passed to the SetCacheDir() method. By default "cakebake\lessphp\runtime" is used.
+                //'cacheDir' => null, // Optional: is passed to the SetCacheDir() method. Default cache directory in composer package directory.
                 'cacheSuffix' => true, // Optional: Filename suffix to avoid the browser cache and force recompiling by configuration changes
             ],
 			...
